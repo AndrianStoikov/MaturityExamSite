@@ -1,0 +1,11 @@
+//    "start": "node ./bin/www"
+
+
+
+
+Before you can start the project you must do the following things:
+
+    Execute the command in the terminal:
+        npm install
+
+    Start a local MongoDb Shell:

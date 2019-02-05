@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="578" height="400"
+        style="border:1px solid #d3d3d3;"></canvas>
+
+<p>
+    <button onclick="myCanvas()">Try it</button>
+</p>
+
+<script>
+  function myCanvas () {
+    var c = document.getElementById('myCanvas')
+    var ctx = c.getContext('2d')
+    var imageObj = new Image()
+
+    imageObj.onload = function () {
+      ctx.drawImage(imageObj, 1, 1)
+
+      ctx.beginPath();
+      ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+      ctx.stroke();
+    }
+
+    imageObj.src = 'https://www.html5canvastutorials.com/demos/assets/darth-vader.jpg'
+
+
+
+  }
+</script>
+</body>
+</html>
