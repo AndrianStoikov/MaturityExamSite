@@ -9,8 +9,8 @@ const LyricsWork = require('../models/LyricsWork')
 *     "authorName": "никола вапцаров",
 *	    "workType": "normal",
 *	    "workName": "ПървоИме-ВтороИме",
-*	    "content": "Бблалбал\\n",
-*	    "analysis": "blalblablal"
+*	    "workContent": "Бблалбал\\n",
+*	    "workAnalysis": "blalblablal"
 *	 }
 *
  */
