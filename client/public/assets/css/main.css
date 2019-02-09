@@ -4292,6 +4292,12 @@ h6 {
     text-align: center;
 }
 
+@media screen and (max-width: 400px) {
+    .faq .faq__card-description {
+        font-size: 4vw;
+    }
+}
+
 .align-left {
     text-align: left !important;
 }

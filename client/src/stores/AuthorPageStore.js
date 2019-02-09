@@ -12,14 +12,14 @@ class AuthorPageStore {
   }
 
   onGetAuthorSuccess (data) {
-    this.biography = data.author.biography
-    this.authorID = data.author._id
-    this.works = data.author.works
-    this.authorName = data.author.cyrillicName;
+    this.biography = data.author.biography ? data.author.biography : ""
+    this.authorID = data.author._id ? data.author._id : ""
+    this.works = data.author.works ? data.author.works : []
+    this.authorName = data.author.cyrillicName ? data.author.cyrillicName : ""
   }
 
   onGetAuthorFail (error) {
-
+    console.log(error)
   }
 }
 

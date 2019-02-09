@@ -24,20 +24,24 @@ export default class HomeTopBar extends Component {
                        href="#багряна">Елисавета Багряна</a>
                   </div>
                   <div className="col topbar__item">
-                    <a className="link link--gray topbar__link" href="#йовков">Йордан Йовков</a>
+                    <a className="link link--gray topbar__link" href="#йовков">Йордан
+                      Йовков</a>
                   </div>
                   <div className="col topbar__item">
-                    <a className="link link--gray topbar__link" href="#смирненски">Христо Смирненски</a>
+                    <a className="link link--gray topbar__link"
+                       href="#смирненски">Христо Смирненски</a>
                   </div>
                   <div className="col topbar__item">
                     <a className="link link--gray topbar__link"
                        href="#вапцаров">Никола Вапцаров</a>
                   </div>
                   <div className="col topbar__item">
-                    <a className="link link--gray topbar__link" href="#димов">Димитър Димов</a>
+                    <a className="link link--gray topbar__link" href="#димов">Димитър
+                      Димов</a>
                   </div>
                   <div className="col topbar__item">
-                    <a className="link link--gray topbar__link" href="#талев">Димитър Талев</a>
+                    <a className="link link--gray topbar__link" href="#талев">Димитър
+                      Талев</a>
                   </div>
                 </div>
               </div>
@@ -65,17 +69,24 @@ export default class HomeTopBar extends Component {
                     </g>
                   </svg>
 
-                  <h4 className="about-app__description-title">Атанас Далчев</h4>
-                  <p>Атанас Христов Далчев е сред най-видните български поети и преводачи на XX век. Автор е на поезия с ярко философска проблематика.
-                    Превежда стихотворения и белетристика от френски, испански, италиански, немски и руски писатели.
-                    Носител е на Хердеровата награда на Виенския университет (1972)</p>
+                  <h4 className="about-app__description-title">Атанас
+                    Далчев</h4>
+                  <p>Атанас Христов Далчев е сред най-видните български поети и
+                    преводачи на XX век. Автор е на поезия с ярко философска
+                    проблематика.
+                    Превежда стихотворения и белетристика от френски, испански,
+                    италиански, немски и руски писатели.
+                    Носител е на Хердеровата награда на Виенския университет
+                    (1972)</p>
                   <Link to={'/authors/atanas-dalchev'}
-                     className="site-btn site-btn--accent about-app__btn">Повече за Атанас Далчев</Link>
+                        className="site-btn site-btn--accent about-app__btn">Повече
+                    за Атанас Далчев</Link>
                 </div>
               </div>
               <div className="col-6 about-app__img about-app__img--left">
                 <div className="about-app__img-wrap">
-                  <img alt="" src="http://e-vestnik.bg/imgs/art_show/At_Dalchev1.jpg"/>
+                  <img alt=""
+                       src="http://e-vestnik.bg/imgs/art_show/At_Dalchev1.jpg"/>
                 </div>
               </div>
             </div>
@@ -101,16 +112,22 @@ export default class HomeTopBar extends Component {
                   </svg>
 
                   <h4 className="about-app__description-title">Гео Милев</h4>
-                  <p>От детска възраст проявява интерес към литературата и рисуването.
-                    През 1907 г. в детското вестниче "Славейче" (бр.15 от 5.1.1907) е отпечатано първото му стихотворение.</p>
+                  <p>Георги Милев Касабов, известен като Гео Милев, е български
+                    поет и публицист, основен представител на експресионизма в
+                    българската литература.
+                    Заедно с други симпатизанти на левицата е убит от полицията
+                    по време на Априлските събития през 1925 г. Баща е на
+                    детската писателка Леда Милева.</p>
                   <Link to={'/authors/geo-milev'}
-                        className="site-btn site-btn--accent about-app__btn">Повече за Гео Милев</Link>
+                        className="site-btn site-btn--accent about-app__btn">Повече
+                    за Гео Милев</Link>
                 </div>
               </div>
               <div className="col-6 about-app__img">
                 <div className="about-app__img-wrap">
                   {/* TODO: LINK SHOULD BE PROVIDED IN THE SITE SOURCES */}
-                  <img alt="" src="https://alchetron.com/cdn/geo-milev-e579da83-007a-4d2b-b3a8-855c97cad7e-resize-750.jpeg"/>
+                  <img alt=""
+                       src="https://alchetron.com/cdn/geo-milev-e579da83-007a-4d2b-b3a8-855c97cad7e-resize-750.jpeg"/>
                 </div>
               </div>
             </div>
@@ -134,21 +151,21 @@ export default class HomeTopBar extends Component {
                     </g>
                   </svg>
 
-                  <h4 className="about-app__description-title">Елисавета Багряна</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Pellentesque placerat eros ac finibus
-                    congue.
-                    Integer consectetur, lorem nec accumsan commodo, sem mauris
-                    pharetra arcu, id viverra eros ipsum
-                    ac
-                    lorem. Suspendisse potenti.</p>
+                  <h4 className="about-app__description-title">Елисавета
+                    Багряна</h4>
+                  <p>Елисавета Багряна (псевдоним на Елисавета Любомирова
+                    Белчева,
+                    известна сред приятели като Лиза Багряна) е
+                    българска поетеса, автор на детски книги и преводач.</p>
                   <Link to={'/authors/elisaveta-bagrqna'}
-                        className="site-btn site-btn--accent about-app__btn">Повече за Елисавета Багряна</Link>
+                        className="site-btn site-btn--accent about-app__btn">Повече
+                    за Елисавета Багряна</Link>
                 </div>
               </div>
               <div className="col-6 about-app__img about-app__img--left">
                 <div className="about-app__img-wrap">
-                  <img alt="" src="https://m4.netinfo.bg/media/images/32581/32581736/960-540-elisaveta-bagriana.jpg"/>
+                  <img alt=""
+                       src="https://m4.netinfo.bg/media/images/32581/32581736/960-540-elisaveta-bagriana.jpg"/>
                 </div>
               </div>
             </div>
@@ -172,16 +189,20 @@ export default class HomeTopBar extends Component {
                             d="M60,32a5,5,0,1,1-5,5A5,5,0,0,1,60,32ZM58,42h4a7,7,0,0,1,7,7v3H51V49A7,7,0,0,1,58,42Z"/>
                     </g>
                   </svg>
-                  <h4 className="about-app__description-title">Йордан Йовков</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Pellentesque placerat eros ac finibus
-                    congue.
-                    Integer consectetur, lorem nec accumsan commodo.</p>
+                  <h4 className="about-app__description-title">Йордан
+                    Йовков</h4>
+                  <p>Йордан Стефанов Йовков ( Юрдан Йовков) (1880 – 1937) е
+                    български писател, класик на българската литература.
+                    Избран е единодушно за член на Съюза на писателите от 1920
+                    година.</p>
+                  <Link to={'/authors/iordan-iovkov'}
+                        className="site-btn site-btn--accent about-app__btn">Повече
+                    за Йордан Йовков</Link>
                 </div>
               </div>
               <div className="col-6 about-app__img">
                 <div className="about-app__img-wrap">
-                  <img alt="" src="assets/img/img_feature_screen_4.png"/>
+                  <img alt="" src="https://tripsjournal.com/wp-content/uploads/2016/04/jordan-jovkov.jpg"/>
                 </div>
               </div>
             </div>
@@ -204,19 +225,19 @@ export default class HomeTopBar extends Component {
                             d="M60,32a5,5,0,1,1-5,5A5,5,0,0,1,60,32ZM58,42h4a7,7,0,0,1,7,7v3H51V49A7,7,0,0,1,58,42Z"/>
                     </g>
                   </svg>
-                  <h4 className="about-app__description-title">Христо Смирненски</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Pellentesque placerat eros ac finibus
-                    congue.
-                    Integer consectetur, lorem nec accumsan commodo, sem mauris
-                    pharetra arcu, id viverra eros ipsum
-                    ac
-                    lorem. Suspendisse potenti.</p>
+                  <h4 className="about-app__description-title">Христо
+                    Смирненски</h4>
+                  <p>Христо Димитров Измирлиев с псевдоним Христо Смирненски
+                    е български поет. Основна тема в творчеството
+                    му е социалната несправедливост.</p>
+                  <Link to={'/authors/hristo-smirnenski'}
+                        className="site-btn site-btn--accent about-app__btn">Повече
+                    за Христо Смирненски</Link>
                 </div>
               </div>
               <div className="col-6 about-app__img about-app__img--left">
                 <div className="about-app__img-wrap">
-                  <img alt="" src="assets/img/img_feature_screen_5.png"/>
+                  <img alt="" src="https://bulgarianhistory.org/wp-content/uploads/2015/09/Smirnenski_Hristo_350x350.jpg"/>
                 </div>
               </div>
             </div>
@@ -240,20 +261,23 @@ export default class HomeTopBar extends Component {
                             d="M60,32a5,5,0,1,1-5,5A5,5,0,0,1,60,32ZM58,42h4a7,7,0,0,1,7,7v3H51V49A7,7,0,0,1,58,42Z"/>
                     </g>
                   </svg>
-                  <h4 className="about-app__description-title">Никола Вапцаров</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Pellentesque placerat eros ac finibus
-                    congue.
-                    Integer consectetur, lorem nec accumsan commodo, sem mauris
-                    pharetra arcu, id viverra eros ipsum
-                    ac
-                    lorem. Suspendisse potenti. Vestibulum aliquam blandit
-                    scelerisque.</p>
+                  <h4 className="about-app__description-title">Никола
+                    Вапцаров</h4>
+                  <p>Никола Йонков Вапцаров (1909 – 1942) е български поет,
+                    чието творчество е предимно със социална и хуманна тематика.
+                    Единствената издадена приживе стихосбирка на Вапцаров
+                    („Моторни песни“)
+                    излиза през 1940 г. Превеждана е на редица езици. Вапцаров
+                    сътрудничи на нелегалната тогава Българска комунистическа
+                    партия и е активен антифашист.</p>
+                  <Link to={'/authors/nikola-vapcarov'}
+                        className="site-btn site-btn--accent about-app__btn">Повече
+                    за Никола Вапцаров</Link>
                 </div>
               </div>
               <div className="col-6 about-app__img">
                 <div className="about-app__img-wrap">
-                  <img alt="" src="assets/img/img_feature_screen_6.png"/>
+                  <img alt="" src="https://cache2.24chasa.bg/Images/Cache/844/Image_4475844_126.jpg"/>
                 </div>
               </div>
             </div>
@@ -276,19 +300,19 @@ export default class HomeTopBar extends Component {
                             d="M60,32a5,5,0,1,1-5,5A5,5,0,0,1,60,32ZM58,42h4a7,7,0,0,1,7,7v3H51V49A7,7,0,0,1,58,42Z"/>
                     </g>
                   </svg>
-                  <h4 className="about-app__description-title">Димитър Димов</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Pellentesque placerat eros ac finibus
-                    congue.
-                    Integer consectetur, lorem nec accumsan commodo, sem mauris
-                    pharetra arcu, id viverra eros ipsum
-                    ac
-                    lorem. Suspendisse potenti.</p>
+                  <h4 className="about-app__description-title">Димитър
+                    Димов</h4>
+                  <p>Димитър Тодоров Димов е български писател и драматург,
+                    ветеринарен лекар, професор по анатомия на гръбначните
+                    животни. Баща е на писателката Теодора Димова.</p>
+                  <Link to={'/authors/dimitar-dimov'}
+                        className="site-btn site-btn--accent about-app__btn">Повече
+                    за Димитър Димов</Link>
                 </div>
               </div>
               <div className="col-6 about-app__img about-app__img--left">
                 <div className="about-app__img-wrap">
-                  <img alt="" src="assets/img/img_feature_screen_5.png"/>
+                  <img alt="" src="https://static.standartnews.com/storage/thumbnails/inner_article/9215/4842/4162/%D0%94%D0%B8%D0%BC%D0%B8%D1%82%D1%8A%D1%80%20%D0%94%D0%B8%D0%BC%D0%BE%D0%B2.jpg"/>
                 </div>
               </div>
             </div>
@@ -312,20 +336,20 @@ export default class HomeTopBar extends Component {
                             d="M60,32a5,5,0,1,1-5,5A5,5,0,0,1,60,32ZM58,42h4a7,7,0,0,1,7,7v3H51V49A7,7,0,0,1,58,42Z"/>
                     </g>
                   </svg>
-                  <h4 className="about-app__description-title">Димитър Талев</h4>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Pellentesque placerat eros ac finibus
-                    congue.
-                    Integer consectetur, lorem nec accumsan commodo, sem mauris
-                    pharetra arcu, id viverra eros ipsum
-                    ac
-                    lorem. Suspendisse potenti. Vestibulum aliquam blandit
-                    scelerisque.</p>
+                  <h4 className="about-app__description-title">Димитър
+                    Талев</h4>
+                  <p>Димитър Талев Петров – Палисламов е изтъкнат български
+                    писател и журналист, автор на тетралогията „Железният
+                    светилник“, „Преспанските камбани“, „Илинден“ и „Гласовете
+                    ви чувам“.</p>
+                  <Link to={'/authors/dimitar-talev'}
+                        className="site-btn site-btn--accent about-app__btn">Повече
+                    за Димитър Талев</Link>
                 </div>
               </div>
               <div className="col-6 about-app__img">
                 <div className="about-app__img-wrap">
-                  <img alt="" src="assets/img/img_feature_screen_6.png"/>
+                  <img alt="" src="https://upload.wikimedia.org/wikipedia/bg/thumb/9/95/Dimitar_Talev.jpg/220px-Dimitar_Talev.jpg"/>
                 </div>
               </div>
             </div>

@@ -11,6 +11,8 @@ module.exports = (app) => {
   app.get('/authors/:name', controllers.author.getAuthor.get)
 
   app.patch('/authors/:id', controllers.author.editAuthor.patch)
+
+  app.get('/tests', controllers.test.allTests.get)
   // LOGIN / LOGOUT
   // app.get('/api/user/', controllers.user.home.get)
   // app.post('/api/user/logout', controllers.user.logout)
