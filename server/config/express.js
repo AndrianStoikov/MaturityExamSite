@@ -17,7 +17,7 @@ module.exports = {
 
 
     app.use(logger('dev'))
-    app.use(bodyParser.json())
+    app.use(bodyParser.json({limit: '2mb'}))
     app.use(bodyParser.urlencoded({extended: false}))
     app.use(express.static(path.normalize(path.join(__dirname, '../public'))))
     app.use(session({secret: secretKey, saveUninitialized: false, resave: false}))

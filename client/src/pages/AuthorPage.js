@@ -29,12 +29,16 @@ export default class AuthorPage extends Component {
   componentDidUpdate (prevProps, prevState, snapshot) {
     $('.faq_card').off('click')
 
+    window.scrollTo(0, 0);
+
     this.enableDropDownCards()
     DesignJavaScript.fixSidebar()
   }
 
   componentDidMount () {
     AuthorPageStore.listen(this.onChange)
+
+    window.scrollTo(0, 0);
 
     let authorName = this.props.location.pathname.substr(
       this.props.location.pathname.lastIndexOf('/') + 1)

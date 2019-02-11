@@ -4290,6 +4290,7 @@ h6 {
     margin: 0;
     opacity: 0;
     text-align: center;
+    color: #3d494c
 }
 
 @media screen and (max-width: 400px) {
@@ -5797,7 +5798,7 @@ h6 {
 }
 
 .sidebar .sidebar__item a {
-    color: #7d93b2;
+    color: #3d494cb5;
     font-size: 24px
 }
 

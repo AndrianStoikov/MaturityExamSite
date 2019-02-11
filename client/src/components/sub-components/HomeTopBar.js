@@ -16,11 +16,11 @@ export default class HomeTopBar extends Component {
                        href="#далчев">Атанас Далчев</a>
                   </div>
                   <div className="col topbar__item">
-                    <a className="link link--gray topbar__link active"
+                    <a className="link link--gray topbar__link"
                        href="#милев">Гео Милев</a>
                   </div>
                   <div className="col topbar__item">
-                    <a className="link link--gray topbar__link active"
+                    <a className="link link--gray topbar__link"
                        href="#багряна">Елисавета Багряна</a>
                   </div>
                   <div className="col topbar__item">
@@ -53,12 +53,15 @@ export default class HomeTopBar extends Component {
             <div id="далчев" className="row about-app about-app--reverse">
               <div className="col-6 about-app__description">
                 <div className="about-app__description-content">
+
                   <svg xmlns="http://www.w3.org/2000/svg" width="120"
                        height="120"
                        viewBox="0 0 120 120">
                     <rect className="svg-bg" width="120" height="120"/>
                     <path className="svg-light-gray"
-                          d="M112,20a2,2,0,0,1,2,2V34a2,2,0,0,1-4,0V22A2,2,0,0,1,112,20Zm-6,6h12a2,2,0,0,1,0,4H106A2,2,0,0,1,106,26ZM8,16a2,2,0,0,1,2,2V30a2,2,0,0,1-4,0V18A2,2,0,0,1,8,16ZM2,22H14a2,2,0,0,1,0,4H2A2,2,0,0,1,2,22ZM20,92a2,2,0,0,1,2,2v12a2,2,0,0,1-4,0V94A2,2,0,0,1,20,92Zm-6,6H26a2,2,0,0,1,0,4H14A2,2,0,0,1,14,98ZM60,20A40,40,0,1,1,20,60,40,40,0,0,1,60,20Z"/>
+                          d="M112,20a2,2,0,0,1,2,2V34a2,2,0,0,1-4,0V22A2,2,0,0,1,112,20Zm-6,6h12a2,2,0,0,1,0,4H106A2,2,0,0,1,106,26ZM8,16a2,2,0,
+                          0,1,2,2V30a2,2,0,0,1-4,0V18A2,2,0,0,1,8,16ZM2,22H14a2,2,0,0,1,0,4H2A2,2,0,0,1,2,22ZM20,92a2,2,0,0,1,2,2v12a2,2,0,0,1-4,0V94A2,2,
+                          0,0,1,20,92Zm-6,6H26a2,2,0,0,1,0,4H14A2,2,0,0,1,14,98ZM60,20A40,40,0,1,1,20,60,40,40,0,0,1,60,20Z"/>
                     <g id="login">
                       <rect className="svg-element" x="51" y="84" width="18"
                             height="6" rx="3" ry="3"/>
@@ -237,7 +240,7 @@ export default class HomeTopBar extends Component {
               </div>
               <div className="col-6 about-app__img about-app__img--left">
                 <div className="about-app__img-wrap">
-                  <img alt="" src="https://bulgarianhistory.org/wp-content/uploads/2015/09/Smirnenski_Hristo_350x350.jpg"/>
+                  <img alt="" src="https://audiobookbg.com/wp-content/uploads/2017/01/rsz_%D1%81%D0%BC%D0%B8%D1%80%D0%BD%D0%B5%D0%BD%D1%81%D0%BA%D0%B85.jpg"/>
                 </div>
               </div>
             </div>
@@ -349,7 +352,7 @@ export default class HomeTopBar extends Component {
               </div>
               <div className="col-6 about-app__img">
                 <div className="about-app__img-wrap">
-                  <img alt="" src="https://upload.wikimedia.org/wikipedia/bg/thumb/9/95/Dimitar_Talev.jpg/220px-Dimitar_Talev.jpg"/>
+                  <img alt="" src="https://www.viewsofia.com/upload/article_big/image_big_32618.jpg"/>
                 </div>
               </div>
             </div>

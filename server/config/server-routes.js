@@ -1,6 +1,6 @@
 const controllers = require('../controllers')
 const authCheck = require('../middlewares/AuthCheck')
-
+const bodyParser = require('body-parser')
 module.exports = (app) => {
   app.get('/', controllers.home.home.get)
 
@@ -13,6 +13,10 @@ module.exports = (app) => {
   app.patch('/authors/:id', controllers.author.editAuthor.patch)
 
   app.get('/tests', controllers.test.allTests.get)
+
+  app.post('/tests/add', controllers.test.addTest.post)
+
+  app.post('/tests/:id/add-question', controllers.test.addQuestion.post)
   // LOGIN / LOGOUT
   // app.get('/api/user/', controllers.user.home.get)
   // app.post('/api/user/logout', controllers.user.logout)

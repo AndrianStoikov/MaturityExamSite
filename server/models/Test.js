@@ -23,12 +23,24 @@ let testSchema = mongoose.Schema({
     required: getRequiredPropMsg('Test name'),
   },
   questions: {
-    type: [mongoose.Schema.Types.String],
-    validate: [questionsLimit, '{PATH} exceeds the limit of 10'],
-  },
-  answer: {
-    type: mongoose.Schema.Types.Number,
-    required: getRequiredPropMsg('Test answer'),
+    type: [
+      {
+        question: {
+          text: {
+            type: mongoose.Schema.Types.String,
+            required: true,
+          },
+          possibleAnswers: {
+            type: [mongoose.Schema.Types.String],
+            required: true,
+          },
+          indexOfAnswer: {
+            type: mongoose.Schema.Types.Number,
+            required: true,
+          },
+        },
+      },
+    ]
   },
 })
 
