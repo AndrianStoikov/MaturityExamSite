@@ -33,6 +33,16 @@ let workTypesExecutioner = {
 }
 
 module.exports = {
+  getAllAuthors: {
+    get: (req, res) => {
+      Author.find({}).then((authors) => {
+        res.status(200).send({
+          'response': 'Authors found successfully',
+          authors: authors,
+        })
+      })
+    },
+  },
   allAuthors: {
     get: (req, res) => {
       Author.find({}).populate('works').then(authors => {
@@ -46,7 +56,7 @@ module.exports = {
 
       Author.findOne({name: name}).populate({
         path: 'works',
-        model: 'LyricsWork'
+        model: 'LyricsWork',
       }).then(author => {
         if (author.length === 0) {
           res.status(400).send({
@@ -75,6 +85,7 @@ module.exports = {
         name: data.name,
         cyrillicName: data.cyrillicName,
         biography: data.biography,
+        shortBiography: data.shortBiography,
         works: [],
       }
 
@@ -88,6 +99,14 @@ module.exports = {
           res.status(409).send({
             response: 'Author with that name already exists.',
           })
+
+          return
+        }
+
+        if (err.name === 'ValidationError') {
+          res.status(409).send({
+            response: err.message,
+          })
         } else {
           res.status(500).send({
             response: 'Something went wrong.',
@@ -99,7 +118,7 @@ module.exports = {
     },
   },
   editAuthor: {
-    patch: (req, res) => {
+    post: (req, res) => {
 
       let authorId = req.params.id
       let authorData = req.body
@@ -108,14 +127,15 @@ module.exports = {
         name: authorData.name,
         cyrillicName: authorData.cyrillicName,
         biography: authorData.biography,
-        works: authorData.works,
+        shortBiography: authorData.shortBiography,
       }
 
       Author.findByIdAndUpdate(authorId, {
         $set: {
           name: authorObject.name,
-          cyrillicName: authorData.cyrillicName,
-          biography: authorData.biography,
+          cyrillicName: authorObject.cyrillicName,
+          biography: authorObject.biography,
+          shortBiography: authorObject.shortBiography,
         },
       }, {new: true}).then((updatedAuthor) => {
         res.status(200).send({
@@ -194,7 +214,7 @@ function lyricsCreateFunction (req, res) {
   Author.findById(authorID).then(author => {
     let paragraphs = parseParagraphs(workContent)
 
-    let parsedWorkName = splitStringAndMakeItWithUpperCase(workName, " ")
+    let parsedWorkName = splitStringAndMakeItWithUpperCase(workName, ' ')
 
     let workObject = {
       name: parsedWorkName,
@@ -202,9 +222,9 @@ function lyricsCreateFunction (req, res) {
       analysis: parseParagraphs(workAnalysis),
     }
 
-    if(!author) {
+    if (!author) {
       res.status(400).send({
-        "response": "Please provide valid author ID."
+        'response': 'Please provide valid author ID.',
       })
 
       return
@@ -224,9 +244,9 @@ function lyricsCreateFunction (req, res) {
     })
   }).catch((err) => {
     console.log(err)
-      res.status(500).send({
-        "response": "Something went wrong"
-      })
+    res.status(500).send({
+      'response': 'Something went wrong',
+    })
   })
 }
 
@@ -239,8 +259,8 @@ function makeStringWithFirstUpperLetter (string) {
 }
 
 function splitStringAndMakeItWithUpperCase (name, separator) {
-  if(!separator) {
-    throw new SyntaxError("Separator must be provided for the function")
+  if (!separator) {
+    throw new SyntaxError('Separator must be provided for the function')
   }
 
   let splitString = name.split(separator)

@@ -70,7 +70,7 @@ export default class MobileNavbar extends Component {
               </li>
 
               <li className="mobile-menu__li">
-                <Link to="/" className="link link--dark-gray link--gray">Тестове</Link></li>
+                <Link to="/tests/all" className="link link--dark-gray link--gray">Тестове</Link></li>
 
               <li className="mobile-menu__li">
                 {/*eslint-disable-next-line*/}

@@ -13,7 +13,11 @@ let authorSchema = mongoose.Schema({
   },
   biography: {
     type: mongoose.Schema.Types.String,
-    required: getRequiredPropMsg('Author name'),
+    required: getRequiredPropMsg('Author biography'),
+  },
+  shortBiography: {
+    type: mongoose.Schema.Types.String,
+    required: getRequiredPropMsg('Author short biography'),
   },
   cyrillicName: {
     type: mongoose.Schema.Types.String,

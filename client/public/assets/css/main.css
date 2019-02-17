@@ -6458,14 +6458,14 @@ h6 {
 }
 
 .blog .blog__item-img-wrap {
-    max-width: 300px;
-    min-width: 300px;
+    max-width: 200px;
+    min-width: 200px;
     width: 100%;
     transition: width .3s
 }
 
 .blog .blog__item-content {
-    min-height: 300px;
+    min-height: 200px;
     position: relative;
     margin-left: 32px;
     padding-bottom: 50px

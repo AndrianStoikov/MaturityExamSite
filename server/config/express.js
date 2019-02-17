@@ -26,7 +26,7 @@ module.exports = {
 
     // TODO: Fix cors policy if the domain is changed
     app.use(cors({
-      origin: ['http://localhost:3001', 'http://192.168.0.102:3001']
+      origin: ['http://localhost:3001', 'http://192.168.0.102:3001', "http://localhost:3002", "http://192.168.0.102:3002"]
     }))
     app.use(passport.session())
     app.use(helmet())

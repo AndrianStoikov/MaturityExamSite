@@ -16,7 +16,7 @@ class Navbar extends Component {
             </Link>
           </li>
           <li>
-            <Link to={'/'}
+            <Link to={'/tests/all'}
                   className="link link--gray">Тестове
             </Link>
           </li>
@@ -30,7 +30,7 @@ class Navbar extends Component {
             </Link>
           </li>
           <li>
-            <Link to={'/'}
+            <Link to={'/tests/all'}
                   className="link link--gray">Тестове
             </Link>
           </li>

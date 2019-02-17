@@ -25,23 +25,22 @@ let testSchema = mongoose.Schema({
   questions: {
     type: [
       {
-        question: {
-          text: {
-            type: mongoose.Schema.Types.String,
-            required: true,
-          },
-          possibleAnswers: {
-            type: [mongoose.Schema.Types.String],
-            required: true,
-          },
-          indexOfAnswer: {
-            type: mongoose.Schema.Types.Number,
-            required: true,
-          },
+        text: {
+          type: mongoose.Schema.Types.String,
+          required: true,
+        },
+        possibleAnswers: {
+          type: [mongoose.Schema.Types.String],
+          required: true,
+        },
+        indexOfAnswer: {
+          type: mongoose.Schema.Types.Number,
+          required: true,
         },
       },
-    ]
+    ],
   },
+  date: {type: Date, default: Date.now()},
 })
 
 const Test = mongoose.model('Test', testSchema)

@@ -25,31 +25,33 @@ export default class TopBar extends Component {
     let workElements = []
     for (let i = 0; i < this.props.works.length; i++) {
 
-      let work = <div id={`work${i}`} className="faq__chapter chapter"
-                      key={works[i]._id}>
-        <h3 className="faq__chapter-title">{works[i].name}</h3>
-        <div className="faq__card card">
-          <h4 className="faq__card-title">Произведение
-            <span className="faq__card-icon">
+      let work = (
+        <div id={`work${i}`} className="faq__chapter chapter"
+             key={works[i]._id}>
+          <h3 className="faq__chapter-title">{works[i].name}</h3>
+          <div className="faq__card card">
+            <h4 className="faq__card-title">Произведение
+              <span className="faq__card-icon">
                           <i className="mdi mdi-chevron-down"/>
                         </span>
-          </h4>
-          <div className="faq__card-description align-left">
-            {this.generateParagraphs(works[i].paragraphs)}
+            </h4>
+            <div className="faq__card-description align-left">
+              {this.generateParagraphs(works[i].paragraphs)}
+            </div>
           </div>
-        </div>
 
-        <div className="faq__card card">
-          <h4 className="faq__card-title">Анализ
-            <span className="faq__card-icon">
+          <div className="faq__card card">
+            <h4 className="faq__card-title">Анализ
+              <span className="faq__card-icon">
                           <i className="mdi mdi-chevron-down"/>
                         </span>
-          </h4>
-          <div className="faq__card-description align-left">
-            {this.generateParagraphs(works[i].analysis)}
+            </h4>
+            <div className="faq__card-description align-left">
+              {this.generateParagraphs(works[i].analysis)}
+            </div>
           </div>
         </div>
-      </div>
+      )
 
       workElements.push(work)
     }
@@ -132,7 +134,7 @@ export default class TopBar extends Component {
 
       let matches = paragraph.match(reg)
 
-      if(matches !== null) {
+      if (matches !== null) {
         pTags.push(this.buildParagraph(paragraph, matches))
 
         continue
@@ -182,7 +184,8 @@ export default class TopBar extends Component {
             </div>
             <div className="col-3 d-t-none">
               <nav className="sidebar" style={{'width': 360 + 'px'}}>
-                <ul className="sidebar__list" style={{"fontFamily": "Open Sans, sans-serif;"}}>
+                <ul className="sidebar__list"
+                    style={{'fontFamily': 'Open Sans, sans-serif'}}>
                   <li className="sidebar__item active">
                     <a href="#биография">Биография</a>
                   </li>

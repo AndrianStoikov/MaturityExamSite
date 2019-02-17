@@ -1,5 +1,5 @@
-import alt from '../alt'
-import DataRequests from '../utilities/DataRequests'
+import alt from '../../alt'
+import DataRequests from '../../utilities/DataRequests'
 import $ from 'jquery'
 
 class AuthorPageActions {

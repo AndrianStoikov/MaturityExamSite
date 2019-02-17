@@ -1,5 +1,5 @@
-import alt from '../alt'
-import AuthorPageActions from '../actions/AuthorPageActions'
+import alt from '../../alt'
+import AuthorPageActions from '../../actions/Author/AuthorPageActions'
 
 class AuthorPageStore {
   constructor () {

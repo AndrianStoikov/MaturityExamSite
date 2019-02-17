@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import TopBar from '../components/sub-components/TopBar'
 import Header from '../components/sub-components/Header'
 import $ from 'jquery'
-import AuthorPageStore from '../stores/AuthorPageStore'
-import AuthorPageActions from '../actions/AuthorPageActions'
+import AuthorPageStore from '../stores/Author/AuthorPageStore'
+import AuthorPageActions from '../actions/Author/AuthorPageActions'
 import DesignJavaScript from '../utilities/DesignJavaScript'
 
 export default class AuthorPage extends Component {
