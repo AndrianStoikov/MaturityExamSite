@@ -13,7 +13,8 @@ class EditActions {
       'handleShortBiographyChange',
       'handleCyrillicNameChange',
       'handleNameChange',
-      ''
+      'biographyValidationFail',
+      'shortBiographyFail'
     )
   }
 
@@ -62,4 +63,4 @@ class EditActions {
   }
 }
 
-export default alt.createActions(EditActions, 'AuthorEditActions')
+export default alt.createActions(EditActions)

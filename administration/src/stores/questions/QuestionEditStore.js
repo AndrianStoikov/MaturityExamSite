@@ -36,6 +36,23 @@ class QuestionEditStore {
     console.log(err)
   }
 
+  onEditQuestionSuccess (data) {
+    this.question = ''
+    this.firstAnswer = ''
+    this.secondAnswer = ''
+    this.thirdAnswer = ''
+    this.forthAnswer = ''
+    this.indexOfAnswer = -1
+    this.answerAsText = ''
+    this.message = ''
+
+    this.questionValidationState = ''
+    this.firstAnswerValidationState = ''
+    this.secondAnswerValidationState = ''
+    this.thirdAnswerValidationState = ''
+    this.forthAnswerValidationState = ''
+  }
+
   onHandleQuestionChange (e) {
     this.question = e.target.value
   }
@@ -60,7 +77,70 @@ class QuestionEditStore {
     this.indexOfAnswer = e.target.selectedIndex
   }
 
+  onQuestionValidationFail (message) {
+    this.message = message
 
+    this.questionValidationState = 'has-error'
+    this.firstAnswerValidationState = ''
+    this.secondAnswerValidationState = ''
+    this.thirdAnswerValidationState = ''
+    this.forthAnswerValidationState = ''
+  }
+
+  onFirstAnswerValidationFail (message) {
+    this.message = message
+
+    this.questionValidationState = ''
+    this.firstAnswerValidationState = 'has-error'
+    this.secondAnswerValidationState = ''
+    this.thirdAnswerValidationState = ''
+    this.forthAnswerValidationState = ''
+    this.rightAnswerValidationState = ''
+  }
+
+  onSecondAnswerValidationFail (message) {
+    this.message = message
+
+    this.questionValidationState = ''
+    this.firstAnswerValidationState = ''
+    this.secondAnswerValidationState = 'has-error'
+    this.thirdAnswerValidationState = ''
+    this.forthAnswerValidationState = ''
+    this.rightAnswerValidationState = ''
+  }
+
+  onThirdAnswerValidationFail (message) {
+    this.message = message
+
+    this.secondAnswerValidationState = ''
+    this.firstAnswerValidationState = ''
+    this.secondAnswerValidationState = ''
+    this.thirdAnswerValidationState = 'has-error'
+    this.forthAnswerValidationState = ''
+    this.rightAnswerValidationState = ''
+  }
+
+  onForthAnswerValidationFail (message) {
+    this.message = message
+
+    this.secondAnswerValidationState = ''
+    this.firstAnswerValidationState = ''
+    this.secondAnswerValidationState = ''
+    this.thirdAnswerValidationState = ''
+    this.forthAnswerValidationState = 'has-error'
+    this.rightAnswerValidationState = ''
+  }
+
+  onRightAnswerValidationFail (message) {
+    this.message = message
+
+    this.secondAnswerValidationState = ''
+    this.firstAnswerValidationState = ''
+    this.secondAnswerValidationState = ''
+    this.thirdAnswerValidationState = ''
+    this.forthAnswerValidationState = ''
+    this.rightAnswerValidationState = 'has-error'
+  }
 }
 
 export default alt.createStore(QuestionEditStore)

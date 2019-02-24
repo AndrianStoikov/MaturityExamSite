@@ -15,6 +15,12 @@ class QuestionEditActions {
       'handleThirdAnswerChange',
       'handleForthAnswerChange',
       'handleAnswerChange',
+      'questionValidationFail',
+      'firstAnswerValidationFail',
+      'secondAnswerValidationFail',
+      'thirdAnswerValidationFail',
+      'forthAnswerValidationFail',
+      'rightAnswerValidationFail'
     )
   }
 

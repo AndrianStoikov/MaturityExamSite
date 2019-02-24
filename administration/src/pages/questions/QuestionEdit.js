@@ -45,7 +45,33 @@ export default class QuestionEdit extends Component {
     QuestionEditStore.unlisten(this.onChange)
   }
 
-  inputIsValid () {
+  isValidInput () {
+    if (this.state.question.length < 3) {
+      QuestionEditActions.questionValidationFail('Question cannot be less than 3 symbols')
+      return false
+    }
+
+    if (this.state.firstAnswer.length < 3) {
+      QuestionEditActions.firstAnswerValidationFail('First answer cannot be less than 3 symbols')
+      return false
+    }
+    if (this.state.secondAnswer.length < 3) {
+      QuestionEditActions.secondAnswerValidationFail('Second answer cannot be less than 3 symbols')
+      return false
+    }
+    if (this.state.thirdAnswer.length < 3) {
+      QuestionEditActions.thirdAnswerValidationFail('Third answer cannot be less than 3 symbols')
+      return false
+    }
+    if (this.state.forthAnswer.length < 3) {
+      QuestionEditActions.forthAnswerValidationFail('Fourth answer cannot be less than 3 symbols')
+      return false
+    }
+
+    if (this.state.indexOfAnswer === -1 || this.state.indexOfAnswer === 4) {
+      QuestionEditActions.rightAnswerValidationFail('Please select answer of the question')
+      return false
+    }
 
     return true
   }
@@ -53,7 +79,7 @@ export default class QuestionEdit extends Component {
   handleSubmit (e) {
     e.preventDefault()
 
-    if (!this.inputIsValid)
+    if (!this.isValidInput())
       return
 
     let questionObject = {

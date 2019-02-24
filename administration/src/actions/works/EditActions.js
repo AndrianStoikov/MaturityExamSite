@@ -13,7 +13,10 @@ class EditActions {
       'handleContentChange',
       'handleAnalysisChange',
       'handleLyricsWorkChange',
-      'handleWorkChange'
+      'handleWorkChange',
+      'nameValidationFail',
+      'contentValidationFail',
+      'analysisValidationFail'
     )
   }
 

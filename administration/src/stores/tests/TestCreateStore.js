@@ -16,6 +16,10 @@ class TestCreateStore {
   onTestCreateSuccess (data) {
     console.log(data)
 
+    this.test = {
+      name: '',
+    }
+
     this.message = ''
     this.nameValidationState = ''
   }
@@ -24,8 +28,8 @@ class TestCreateStore {
     this.test.name = e.target.value
   }
 
-  onNameValidationFail () {
-    this.message = 'Моля въведете правилно име'
+  onNameValidationFail (message) {
+    this.message = message
     this.nameValidationState = 'has-error'
   }
 }

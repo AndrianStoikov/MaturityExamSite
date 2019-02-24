@@ -7,12 +7,15 @@ import LoginStore from '../../stores/user/LoginStore'
 import TextGroup from '../../components/form/TextGroup'
 import Form from '../../components/form/Form'
 import Submit from '../../components/form/Submit'
+import $ from 'jquery'
 
 class UserLogin extends Component {
   constructor (props) {
     super(props)
     this.state = LoginStore.getState()
     this.onChange = this.onChange.bind(this)
+
+    this.backgroundImageUrl = 'assets/images/section-4.jpg'
   }
 
   onChange (state) {
@@ -61,7 +64,12 @@ class UserLogin extends Component {
   render () {
     return (
       <div>
-        <section className="module bg-dark-30" data-background="assets/images/section-4.jpg" style={{minHeight: "600px"}}>
+        <section className="module bg-dark-30"
+                 style={{
+                   backgroundImage: `url(${this.backgroundImageUrl})`,
+                   height: $(window).height(),
+                   minHeight: "600px"
+                 }}>
           <div className="container">
             <div className="row">
               <div className="col-sm-6 col-sm-offset-3">

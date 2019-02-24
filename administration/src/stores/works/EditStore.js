@@ -14,6 +14,8 @@ class EditStore {
 
     this.workType = 'Произведение като текст'
     this.works = []
+
+    this.message = ''
     this.nameValidationState = ''
     this.contentValidationState = ''
     this.analysisValidationState = ''
@@ -52,6 +54,30 @@ class EditStore {
 
   onHandleAnalysisChange (e) {
     this.work.workAnalysis = e.target.value
+  }
+
+  onNameValidationFail (message) {
+    this.message = message
+
+    this.nameValidationState = 'has-error'
+    this.contentValidationState = ''
+    this.analysisValidationState = ''
+  }
+
+  onContentValidationFail (message) {
+    this.message = message
+
+    this.nameValidationState = ''
+    this.contentValidationState = 'has-error'
+    this.analysisValidationState = ''
+  }
+
+  onAnalysisValidationFail (message) {
+    this.message = message
+
+    this.nameValidationState = ''
+    this.contentValidationState = ''
+    this.analysisValidationState = 'has-error'
   }
 }
 

@@ -54,7 +54,7 @@ const Routes = (history) => (
     <PrivateRoute exact path={'/administration/credits/edit/:id'} component={CreditsEdit}/>
     <PrivateRoute exact path={'/administration/credits/delete/:id'} component={CreditsDelete}/>
 
-    <PrivateRoute exact path={'/administration/error'} component={ErrorPage}/>
+    <Route exact path={'/administration/error'} component={ErrorPage}/>
 
     <Route component={PageNotFound}/>
   </Switch>

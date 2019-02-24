@@ -24,7 +24,6 @@ export default class TestCreate extends Component {
     TestCreateStore.listen(this.onChange)
 
     window.scrollTo(0, 0)
-
   }
 
   componentWillUnmount () {
@@ -32,8 +31,8 @@ export default class TestCreate extends Component {
   }
 
   isValidContent () {
-    if (!this.state.test.name) {
-      TestCreateActions.nameValidationFail()
+    if (this.state.test.name === '') {
+      TestCreateActions.nameValidationFail('Моля въведете правилно име')
       return false
     }
 

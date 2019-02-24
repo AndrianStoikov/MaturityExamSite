@@ -1,5 +1,4 @@
-import React from 'react'
-import { Component } from 'react'
+import React, { Component } from 'react'
 import DarkBackgroundWithText
   from '../../components/subcomponents/styled/DarkBackgroundWithText'
 import Form from '../../components/form/Form'
@@ -43,8 +42,27 @@ export default class AuthorEdit extends Component {
     EditStore.unlisten(this.onChange)
   }
 
+  isValidContent () {
+    if(this.state.author.biography === '') {
+      EditActions.biographyValidationFail('Biography can\'t be empty')
+
+      return false
+    }
+
+    if(this.state.author.shortBiography === '') {
+      EditActions.shortBiographyValidationFail('Field can\'t be empty')
+
+      return false
+    }
+
+    return true
+  }
+
   handleSubmit (e) {
     e.preventDefault()
+
+    if (!this.isValidContent())
+      return
 
     const authorName = this.props.match.params.name
 
@@ -52,7 +70,8 @@ export default class AuthorEdit extends Component {
       .then(() => {
         const searchObject = queryString.parse(this.props.location.search)
 
-        this.props.history.push(`/administration/authors/${searchObject.authorName}`)
+        this.props.history.push(
+          `/administration/authors/${searchObject.authorName}`)
       })
       .catch((err) => {
         this.props.history.push(

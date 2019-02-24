@@ -12,6 +12,7 @@ class EditStore {
       shortBiography: '',
     }
 
+    this.message = ''
     this.biographyValidationState = ''
     this.shortBiographyValidationState = ''
   }
@@ -36,6 +37,10 @@ class EditStore {
       biography: '',
       shortBiography: '',
     }
+
+    this.message = ''
+    this.biographyValidationState = ''
+    this.shortBiographyValidationState = ''
   }
 
   onHandleBiographyChange (e) {
@@ -44,6 +49,20 @@ class EditStore {
 
   onHandleShortBiographyChange (e) {
     this.author.shortBiography = e.target.value
+  }
+
+  biographyValidationFail (message) {
+    this.message = message
+
+    this.biographyValidationState = 'has-error'
+    this.shortBiographyValidationState = ''
+  }
+
+  shortBiographyFail (message) {
+    this.message = message
+
+    this.biographyValidationState = ''
+    this.shortBiographyValidationState = 'has-error'
   }
 }
 
