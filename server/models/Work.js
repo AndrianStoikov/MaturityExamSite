@@ -10,12 +10,12 @@ let workSchema = mongoose.Schema({
     type: mongoose.Schema.Types.String,
     required: getRequiredPropMsg('Work name')
   },
-  content: {
+  workContent: {
     type: mongoose.Schema.Types.String,
     required: getRequiredPropMsg('Work content')
   },
   analysis: {
-    type: mongoose.Schema.Types.String,
+    type: [mongoose.Schema.Types.String],
     require:  getRequiredPropMsg('Work analysis')
   }
 })

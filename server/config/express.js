@@ -11,9 +11,12 @@ const cookieParser = require('cookie-parser');
 
 const secretKey = 'Z2mffFzEzRjgsS9OlIa8s3KegNzkiEMU/vOogOBY4uq7EOef6mHyVQax/+f7d6UhBcJMDQIfGua/9uDqOrXYn43SwBJxL20jeFgS7LOkvRHkVuc8E28fMUER2sTgTt5VjPn5aH2I8+/cOHUf3dilVmUzbe0G0uEkxa1ucqT87+s='
 
+// TODO: SET THE RIGHT PORT FOR THE APP
+// 13173 - webfaction
+// 3000 - local port
 module.exports = {
   attachMiddleWares: (app) => {
-    app.set('port', process.env.PORT || 3000)
+    app.set('port', 3000)
 
 
     app.use(logger('dev'))
@@ -25,8 +28,10 @@ module.exports = {
     app.use(cookieParser());
 
     // TODO: Fix cors policy if the domain is changed
+    // Local - 'http://localhost:3001', 'http://192.168.0.102:3001', "http://localhost:3002", "http://192.168.0.100:3002"
+    // Webfaction - 'http://administration.hercogit.webfactional.com', 'http://hercogit.webfactional.com'
     app.use(cors({
-      origin: ['http://localhost:3001', 'http://192.168.0.102:3001', "http://localhost:3002", "http://192.168.0.102:3002"]
+      origin: ['http://localhost:3001', 'http://192.168.0.102:3001', "http://localhost:3002", "http://192.168.0.100:3002"]
     }))
     app.use(passport.session())
     app.use(helmet())

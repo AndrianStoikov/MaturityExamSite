@@ -96,11 +96,14 @@ export default class AuthorPage extends Component {
 
     return (
       <div>
-        <Header infoText={this.state.biography.substr(0, 30) + '...'}
+        <Header infoText={this.state.shortBiography}
                 image={`/images${authorUrl}.jpg`}/>
 
-        <TopBar biography={this.state.biography} works={this.state.works}
-                authorName={this.state.authorName}/>
+        <TopBar biography={this.state.biography}
+                works={this.state.works}
+                authorName={this.state.authorName}
+                normalWorks={this.state.normalWorks}
+        />
 
         <div id="endMenu"/>
       </div>

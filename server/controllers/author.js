@@ -54,27 +54,39 @@ module.exports = {
     get: (req, res) => {
       let name = splitStringAndMakeItWithUpperCase(req.params.name, '-')
 
-      Author.findOne({name: name}).populate({
-        path: 'works',
-        model: 'LyricsWork',
-      }).then(author => {
-        if (author.length === 0) {
-          res.status(400).send({
-            response: 'Author not found',
+      Author.findOne({name: name})
+        .populate({path: 'works', model: 'LyricsWork'})
+        .populate({path: 'normalWorks', model: 'Work'})
+        .then(author => {
+          if (!author) {
+            res.status(400).send({
+              response: 'Author not found',
+            })
+
+            return
+          }
+
+          if (author.length === 0) {
+            res.status(400).send({
+              response: 'Author not found',
+            })
+
+            return
+          }
+
+          res.status(200).send({
+            response: 'Author found',
+            author: author,
           })
-
-          return
-        }
-
-        res.status(200).send({
-          response: 'Author found',
-          author: author,
         })
-      }).catch(err => {
-        res.status(500).send({
-          'response': 'Something went wrong.',
+        .catch(err => {
+
+          console.log(err)
+
+          res.status(500).send({
+            'response': 'Something went wrong.',
+          })
         })
-      })
     },
   },
   addAuthor: {
@@ -120,7 +132,7 @@ module.exports = {
   editAuthor: {
     post: (req, res) => {
 
-      let authorId = req.params.id
+      let authorName = splitStringAndMakeItWithUpperCase(req.params.name, '-')
       let authorData = req.body
 
       let authorObject = {
@@ -130,7 +142,7 @@ module.exports = {
         shortBiography: authorData.shortBiography,
       }
 
-      Author.findByIdAndUpdate(authorId, {
+      Author.findOneAndUpdate({name: authorName}, {
         $set: {
           name: authorObject.name,
           cyrillicName: authorObject.cyrillicName,
@@ -162,16 +174,7 @@ module.exports = {
   },
   addWork: {
     post: (req, res) => {
-      let authorName = req.body.authorName
       let workType = req.body.workType
-
-      if (!authorName) {
-        res.status(400).send({
-          response: 'Invalid author name. Please provide valid author. Example: {Nikola Vapcarov}. Note the name should match with the cyrillic name translation.',
-        })
-
-        return
-      }
 
       if (!workType || !workTypesExecutioner[workType]) {
         res.status(400).send({
@@ -187,37 +190,59 @@ module.exports = {
 }
 
 function normalCreateFunction (req, res) {
-  let authorName = req.body.authorName
-  let content = req.body.content
-  let workName = req.body.workName
-  let workAnalysis = req.body.analysis
+  let authorID = req.params.id
+  let content = req.body.workContent
+  let workName = req.body.name
+  let workAnalysis = req.body.workAnalysis
 
   let workObject = {
-    name: makeStringWithFirstUpperLetter(workName),
-    content: content,
-    analysis: workAnalysis,
+    name: workName,
+    workContent: content,
+    analysis: parseParagraphs(workAnalysis),
   }
 
-  Work.create(workObject).then(work => {
-    res.status(200).send(work)
+  Author.findById(authorID).then(author => {
+    if (!author) {
+      res.status(400).send({
+        'response': 'Please provide valid author ID.',
+      })
+
+      return
+    }
+
+    Work.create(workObject).then(createdWork => {
+      author.normalWorks.push(createdWork._id)
+
+      author.save().then((author) => {
+        res.status(200).send({
+          'response': 'New work saved successfully.',
+          'normalWork': createdWork,
+        })
+      }).catch(err => {
+        console.log(err)
+      })
+    })
+  }).catch((err) => {
+    console.log(err)
+    res.status(500).send({
+      'response': 'Something went wrong',
+    })
   })
 }
 
 function lyricsCreateFunction (req, res) {
   let authorID = req.params.id
-  let authorName = req.body.authorName
 
-  let workName = req.body.workName
+  let workName = req.body.name
   let workContent = req.body.workContent
   let workAnalysis = req.body.workAnalysis
+
 
   Author.findById(authorID).then(author => {
     let paragraphs = parseParagraphs(workContent)
 
-    let parsedWorkName = splitStringAndMakeItWithUpperCase(workName, ' ')
-
     let workObject = {
-      name: parsedWorkName,
+      name: workName,
       paragraphs: paragraphs,
       analysis: parseParagraphs(workAnalysis),
     }

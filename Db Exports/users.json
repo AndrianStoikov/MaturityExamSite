@@ -1,0 +1,10 @@
+{ 
+    "_id" : ObjectId("5c309ba9342cf315703c7cd2"), 
+    "roles" : [
+        "Admin"
+    ], 
+    "username" : "Admin", 
+    "salt" : "3p3b37r4MbFnWf3SRYKF8DZhm3d+jM+vYJz0osMUTsbce7H3nwwNhddC7Pk3xY9PjgL3fNI1YBVk8aNtB7PxBkS5jvq37KsXyfFM4ajjCjdQx/4RCiYuWmpwwcNC39U3/imt2fanl5FxsWzfZczRY8r/mprqhNicPVLplIUlzMQ=", 
+    "password" : "60855958a45801077b02307c4e9b5d3a802783739622c3800f786d2e85673e27", 
+    "__v" : NumberInt(0)
+}

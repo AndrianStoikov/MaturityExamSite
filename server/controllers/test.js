@@ -13,8 +13,43 @@ module.exports = {
       })
     },
   },
+  getTest: {
+    get: (req, res) => {
+      const testID = req.params.id
+
+      Test.findById(testID).then((test) => {
+        if (!test) {
+          res.status(400).send({
+            'response': 'Test could not be found.',
+          })
+
+          return
+        }
+
+        res.status(200).send({
+          'response': 'Test retrieved successfully',
+          test: test,
+        })
+      }).catch((err) => {
+        console.log(err)
+
+        res.status(500).send({
+          response: 'Something went wrong',
+        })
+      })
+    },
+  },
   addTest: {
     post: (req, res) => {
+
+      if (!req.body.name) {
+        res.status(400).send({
+          response: 'Provide valid test name',
+        })
+
+        return
+      }
+
       let testObject = {
         name: req.body.name,
         questions: [],
@@ -28,21 +63,66 @@ module.exports = {
       })
     },
   },
+  deleteTest: {
+    post: (req, res) => {
+      const testId = req.params.id
+
+      Test.findByIdAndRemove(testId)
+        .then((test) => {
+          if (!test) {
+            res.status(400).send({
+              response: 'Please provide correct test id',
+            })
+
+            return
+          }
+
+          res.status(200).send({
+            response: 'Successfully deleted test',
+            test: test,
+          })
+        })
+        .catch((err) => {
+          console.log(err)
+
+          res.status(500).send({
+            response: 'Something went wrong.',
+          })
+        })
+    },
+  },
   addQuestion: {
     post: (req, res) => {
       let questionObject = req.body
-      let questionId = req.params.id
+      let testID = req.params.id
 
-      Test.findById(questionId).then((test) => {
+      if (!questionObject.text) {
+
+        res.status(400).send({
+          response: 'Please provide correct question text',
+        })
+
+        return
+      }
+
+      if (!questionObject.possibleAnswers ||
+        questionObject.possibleAnswers.length === 0) {
+
+        res.status(400).send({
+          response: 'Please provide correct possible answers',
+        })
+
+        return
+      }
+
+      Test.findById(testID).then((test) => {
         if (test == null)
           res.status(400).send({
             response: 'Please provide correct test ID',
           })
 
-        Test.findByIdAndUpdate(questionId, {$push: {questions: questionObject}},
+        Test.findByIdAndUpdate(testID, {$push: {questions: questionObject}},
           {new: true}).then((success) => {
-
-          console.log(success.questions[success.questions.length - 1])
 
           res.status(200).send({
             response: 'Question added successfully',
@@ -58,17 +138,96 @@ module.exports = {
       })
     },
   },
-}
+  getQuestion: {
+    get: (req, res) => {
+      const testId = req.params.testId
+      const questionId = req.params.questionId
 
-// TODO: FIND ELEMENT BY ID IN NESTED ARRAY. WILL BE USED LATTER IN THE EDITING PROCESS
-// Test.findById(
-//   questionId,
-//   {
-//     questions: {
-//       $elemMatch: {
-//         _id: '5c61d0a83a2d031a2cb7e736',
-//       },
-//     },
-//   }).then((result) => {
-//   res.send(result)
-// })
+      Test.findById(
+        testId,
+        {
+          questions: {
+            $elemMatch: {
+              _id: questionId,
+            },
+          },
+        }).then((result) => {
+        res.status(200).send({
+          response: 'Successfully retrieved questionObject',
+          question: result.questions[0],
+        })
+      }).catch((err) => {
+        res.status(500).send({
+          response: 'Something went wrong',
+        })
+
+        console.log(err)
+      })
+
+    },
+  },
+  editQuestion: {
+    post: (req, res) => {
+      const questionObject = req.body
+
+      const testId = req.params.testId
+      const questionId = req.params.questionId
+
+      Test
+        .findOneAndUpdate(
+          {'questions._id': questionId},
+          {
+            $set: {
+              'questions.$.text': questionObject.text,
+              'questions.$.possibleAnswers': questionObject.possibleAnswers,
+              'questions.$.indexOfAnswer': questionObject.indexOfAnswer,
+            },
+          },
+        )
+        .then((test) => {
+
+          res.status(200).send({
+            response: 'Successfully updated the object',
+            test: test,
+          })
+
+        }).catch((err) => {
+        res.status(500).send({
+          response: 'Something went wrong',
+        })
+
+        console.log(err)
+      })
+    },
+  },
+  deleteQuestion: {
+    post: (req, res) => {
+
+      const testId = req.params.testId
+      const questionId = req.params.questionId
+
+      Test
+        .findOneAndUpdate(
+          {'_id': testId},
+          {
+            $pull: {
+              'questions': {'_id': questionId},
+            },
+          },
+        )
+        .then((test) => {
+          res.status(200).send({
+            response: 'Successfully updated the object',
+            test: test,
+          })
+
+        }).catch((err) => {
+        res.status(500).send({
+          response: 'Something went wrong',
+        })
+
+        console.log(err)
+      })
+    },
+  },
+}

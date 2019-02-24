@@ -3,6 +3,7 @@ const homeController = require('./home')
 const authorController = require('./author')
 const testController = require('./test')
 const workController = require('./work')
+const creditController = require('./credit')
 
 module.exports = {
   user: userController,
@@ -10,4 +11,5 @@ module.exports = {
   author: authorController,
   test: testController,
   work: workController,
+  credit: creditController
 }

@@ -1,0 +1,7 @@
+{ 
+    "_id" : ObjectId("5c48cd278f550a283044672c"), 
+    "name" : "Къща", 
+    "content" : "Бблалбал\\n", 
+    "analysis" : "blalblablal", 
+    "__v" : NumberInt(0)
+}

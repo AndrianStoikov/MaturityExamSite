@@ -24,7 +24,8 @@ let authorSchema = mongoose.Schema({
     required: getRequiredPropMsg('Author cyrillic name'),
     unique: true
   },
-  works: {type: [mongoose.Schema.Types.ObjectId], ref: 'LyricsWork'}
+  works: {type: [mongoose.Schema.Types.ObjectId], ref: 'LyricsWork'},
+  normalWorks: {type: [mongoose.Schema.Types.ObjectId], ref: 'Work'}
 })
 
 const Author = mongoose.model('Author', authorSchema)

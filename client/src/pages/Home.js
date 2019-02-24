@@ -1,5 +1,4 @@
-import { Component } from 'react'
-import React from 'react'
+import React, { Component } from 'react'
 import Header from '../components/sub-components/Header'
 import HomeTopBar from '../components/sub-components/HomeTopBar'
 import $ from 'jquery'
@@ -46,16 +45,18 @@ export default class Home extends Component {
         return false
       })
     })
+
+    window.scrollTo(0, 0)
   }
 
   render () {
     return (
       <div>
-        <Header infoText={'The\n' +
-        '                  only application you’ll need to\n' +
-        '                  power your\n' +
-        '                  life. '}
-                image={''}/>
+        <Header
+          infoText={'Сайта предоставя достъп до всички 8 автори от 12-ти клас,\n' +
+          'които са включени в ДЗИ, техните произведения\n' +
+          'анализи към тях и тестове'}
+          image={''}/>
         <HomeTopBar/>
 
         <div id="endMenu"/>

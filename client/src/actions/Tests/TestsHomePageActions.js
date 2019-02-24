@@ -7,6 +7,7 @@ class TestsHomePageActions {
     this.generateActions(
       'getTestsSuccess',
       'getTestsFail',
+      'sortTests'
     )
   }
 

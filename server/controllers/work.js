@@ -1,4 +1,5 @@
 const LyricsWork = require('../models/LyricsWork')
+const Work = require('../models/Work')
 
 let workTypesEditExecutioner = {
   'normal': normalEditFunction,
@@ -10,7 +11,31 @@ function parseParagraphs (string) {
 }
 
 function normalEditFunction (req, res) {
-  res.sendStatus(200)
+  const workId = req.params.id
+
+  const workContent = req.body.workContent
+  const analysis = parseParagraphs(req.body.workAnalysis)
+  const workName = req.body.name
+
+  console.log(req.body)
+
+  Work
+    .findByIdAndUpdate(workId,
+      {$set: {name: workName, workContent: workContent, analysis: analysis}},
+      {new: true})
+    .then((updatedWork) => {
+      res.status(200).send({
+        response: 'Work updated successfully',
+        work: updatedWork,
+      })
+    })
+    .catch((err) => {
+      console.log(err)
+
+      res.status(500).send({
+        response: 'Something went wrong',
+      })
+    })
 }
 
 function lyricsEditFunction (req, res) {
@@ -41,23 +66,54 @@ module.exports = {
     get: (req, res) => {
       const workID = req.params.id
 
-      // TODO: FIND WORK WHICH IS NOT LYRICS
+      const workType = req.query.workType
 
-      LyricsWork.findById(workID).then((work) => {
-        res.status(200).send(work)
-      }).catch((err) => {
-        console.log(err)
-        res.status(500).send({
-          response: 'Something went wrong',
+      if (workType === 'normal') {
+        Work.findById(workID).then((work) => {
+          if(!work) {
+            res.status(400).send({
+              response: 'Provide valid work id',
+            })
+
+            return
+          }
+
+
+          res.status(200).send(work)
+        }).catch((err) => {
+          console.log(err)
+          res.status(500).send({
+            response: 'Something went wrong',
+          })
         })
-      })
 
+        return
+      }
+
+      if (workType === 'lyrics') {
+        LyricsWork.findById(workID).then((work) => {
+          if(!work) {
+            res.status(400).send({
+              response: 'Provide valid work id',
+            })
+
+            return
+          }
+
+          res.status(200).send(work)
+        }).catch((err) => {
+          console.log(err)
+          res.status(500).send({
+            response: 'Something went wrong',
+          })
+        })
+
+        return
+      }
     },
   },
   editWork: {
     post: (req, res) => {
-      // console.log(req.body)
-
       let workType = req.body.workType
 
       let workName = req.body.name
@@ -86,16 +142,16 @@ module.exports = {
       const workID = req.params.id
       const workType = req.body.workType
 
-      if(workType !== 'lyrics' && workType !== 'normal') {
+      if (workType !== 'lyrics' && workType !== 'normal') {
         res.status(400).send({
-          response: "Provide valid workType"
+          response: 'Provide valid workType',
         })
 
         return
       }
 
       if (workType === 'lyrics') {
-        LyricsWork.findById(workID).remove().then((deletedWork) => {
+        LyricsWork.findByIdAndRemove(workID).then((deletedWork) => {
           res.status(200).send({
             'response': 'Successfully deleted object',
             deletedWork: deletedWork,
@@ -111,9 +167,25 @@ module.exports = {
       }
 
       if (workType === 'normal') {
-        res.status(500).send({
-          response: 'Not implemented yet'
-        })
+        Work.findByIdAndRemove(workID)
+          .then((deletedWork) => {
+            if(!deletedWork) {
+              res.status(400).send({
+                response: 'Provide valid work id',
+              })
+            }
+
+            res.status(200).send({
+              'response': 'Successfully deleted object',
+              deletedWork: deletedWork,
+            })
+          })
+          .catch((err) => {
+            console.log(err)
+            res.status(500).send({
+              response: 'Something went wrong',
+            })
+          })
       }
     },
   },

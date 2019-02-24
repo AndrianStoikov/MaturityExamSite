@@ -81,7 +81,7 @@ class Navbar extends Component {
                 {/*d="M237.418,8583.56a12.688,12.688,0,0,0,.419-3.37c-0.036-5.24-2.691-9.68-7.024-13.2h-3.878a20.819,20.819,0,0,1,4.478,13.01c0,4.56-2.456,10.2-6.413,11.4a16.779,16.779,0,0,1-2.236.51c-10.005,1.55-14.109-17.54-9.489-23.31,2.569-3.21,6.206-4.08,11.525-4.08h17.935A24.22,24.22,0,0,1,237.418,8583.56Zm-12.145-24.45c-8.571.02-12.338,0.98-16.061,4.84-6.267,6.49-6.462,20.69,4.754,27.72a24.092,24.092,0,1,1,27.3-32.57h-16v0.01Z"*/}
                 {/*transform="translate(-195 -8544)"></path>*/}
                 {/*</svg>*/}
-                <p className="menu__logo-title">За Матурата</p>
+                <p className="menu__logo-title">Матурата</p>
               </Link>
             </div>
             <div className="menu__item d-t-none">
@@ -91,8 +91,8 @@ class Navbar extends Component {
             </div>
             <div className="menu__item">
               <nav className="menu__right-nav d-l-none">
-                <li><a href="06_pricing.html" className="link link--gray">За
-                  сайта</a></li>
+                <li><Link to={'/about'} className="link link--gray">За
+                  сайта</Link></li>
               </nav>
               <div className="d-none d-t-block">
                 <button type="button" className="menu__mobile-button">

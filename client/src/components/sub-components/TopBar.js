@@ -21,10 +21,11 @@ export default class TopBar extends Component {
 
   parseAuthorWorks () {
     let works = this.props.works
+    let normalWorks = this.props.normalWorks
 
     let workElements = []
-    for (let i = 0; i < this.props.works.length; i++) {
 
+    for (let i = 0; i < this.props.works.length; i++) {
       let work = (
         <div id={`work${i}`} className="faq__chapter chapter"
              key={works[i]._id}>
@@ -56,11 +57,51 @@ export default class TopBar extends Component {
       workElements.push(work)
     }
 
+    for (let i = 0, index = works.length; i < normalWorks.length; i++, index++) {
+      let work = (
+        <div id={`work${i}`} className="faq__chapter chapter"
+             key={normalWorks[i]._id}>
+          <h3 className="faq__chapter-title">{normalWorks[i].name}</h3>
+          <div className="faq__card card">
+            <h4 className="faq__card-title">Произведение
+              <span className="faq__card-icon">
+                          <i className="mdi mdi-chevron-down"/>
+                        </span>
+            </h4>
+            <div className="faq__card-description align-left">
+              <a
+                href={normalWorks[i].workContent}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{color: 'blue', fontSize: '19px'}}
+              >
+              {normalWorks[i].workContent}
+              </a>
+            </div>
+          </div>
+
+          <div className="faq__card card">
+            <h4 className="faq__card-title">Анализ
+              <span className="faq__card-icon">
+                          <i className="mdi mdi-chevron-down"/>
+                        </span>
+            </h4>
+            <div className="faq__card-description align-left">
+              {this.generateParagraphs(normalWorks[i].analysis)}
+            </div>
+          </div>
+        </div>
+      )
+
+      workElements.push(work)
+    }
+
     return workElements
   }
 
   generateSideNavigation () {
     let works = this.props.works
+    let normalWorks = this.props.normalWorks
 
     let navItems = []
     for (let i = 0; i < works.length; i++) {
@@ -69,6 +110,14 @@ export default class TopBar extends Component {
           <a href={`#work${i}`}>{works[i].name}</a>
         </li>,
       )
+    }
+
+    for (let i = 0, index = works.length; i < normalWorks.length; i++, index++) {
+       navItems.push(
+         <li className="sidebar__item" key={index}>
+           <a href={`#work${index}`}>{normalWorks[i].name}</a>
+         </li>,
+       )
     }
 
     return navItems

@@ -1,0 +1,35 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "http://administration.hercogit.webfactional.com",
+  "dependencies": {
+    "alt": "^0.18.6",
+    "history": "^4.7.2",
+    "jquery": "^3.2.1",
+    "query-string": "^6.2.0",
+    "react": "^15.6.1",
+    "react-bootstrap": "^0.31.2",
+    "react-dom": "^15.6.1",
+    "react-html-parser": "^2.0.2",
+    "react-masonry-component": "^6.2.1",
+    "react-paginate": "^4.4.3",
+    "react-render-html": "^0.5.1",
+    "react-responsive": "^6.1.1",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "^2.1.5",
+    "uuid": "^3.3.2"
+  },
+  "scripts": {
+    "start": "set PORT=3002 && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
