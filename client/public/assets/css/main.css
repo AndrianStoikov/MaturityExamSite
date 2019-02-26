@@ -1993,7 +1993,7 @@ h6 {
 
 .header-home .header-home__title--features {
     width: 750px;
-    margin-bottom: 450px
+    margin-bottom: 250px
 }
 
 .header-home .header-home__title--desktop {
@@ -2164,7 +2164,8 @@ h6 {
 
 @media screen and (max-width: 768px) {
     .header-home .header-home__title {
-        width: 100%
+        width: 100%;
+        margin-bottom: 100px
     }
 
     .header-home .header-home__description {
@@ -4304,6 +4305,7 @@ h6 {
 @media screen and (max-width: 400px) {
     .faq .faq__card-description {
         font-size: 4vw;
+        color: black;
     }
 }
 
@@ -5770,8 +5772,8 @@ h6 {
 
 @media screen and (max-width: 480px) {
     .mobile-menu .menu__logo-img {
-        width: 32px;
-        height: 32px
+        width: 60px;
+        height: 60px
     }
 
     .mobile-menu .mobile-menu__logo {
@@ -7901,4 +7903,16 @@ h6 {
     .col-offset-6 {
         margin-left: 50%
     }
+}
+
+.arrow {
+    border: solid #213043;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
 }

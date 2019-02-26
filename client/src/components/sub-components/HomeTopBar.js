@@ -6,7 +6,7 @@ export default class HomeTopBar extends Component {
   render () {
     return (
       <div>
-        <section className="section">
+        <section className="section" id='wrapper'>
           <div className="topbar-wrapper">
             <nav className="topbar">
               <div className="container">
@@ -49,7 +49,6 @@ export default class HomeTopBar extends Component {
           </div>
 
           <div className="container jsfeatures">
-
             <div id="далчев" className="row about-app about-app--reverse">
               <div className="col-6 about-app__description">
                 <div className="about-app__description-content">
@@ -129,8 +128,8 @@ export default class HomeTopBar extends Component {
               <div className="col-6 about-app__img">
                 <div className="about-app__img-wrap">
                   {/* TODO: LINK SHOULD BE PROVIDED IN THE SITE SOURCES */}
-                  <img alt=""
-                       src="https://alchetron.com/cdn/geo-milev-e579da83-007a-4d2b-b3a8-855c97cad7e-resize-750.jpeg"/>
+                  <img alt="Гео Милев"
+                       src="/images/geo-milev-home.jpeg"/>
                 </div>
               </div>
             </div>
@@ -205,7 +204,8 @@ export default class HomeTopBar extends Component {
               </div>
               <div className="col-6 about-app__img">
                 <div className="about-app__img-wrap">
-                  <img alt="" src="https://tripsjournal.com/wp-content/uploads/2016/04/jordan-jovkov.jpg"/>
+                  {/*https://tripsjournal.com/wp-content/uploads/2016/04/jordan-jovkov.jpg*/}
+                  <img alt="" src="/images/iordan-iovkov-home.jpg"/>
                 </div>
               </div>
             </div>
@@ -240,7 +240,8 @@ export default class HomeTopBar extends Component {
               </div>
               <div className="col-6 about-app__img about-app__img--left">
                 <div className="about-app__img-wrap">
-                  <img alt="" src="https://audiobookbg.com/wp-content/uploads/2017/01/rsz_%D1%81%D0%BC%D0%B8%D1%80%D0%BD%D0%B5%D0%BD%D1%81%D0%BA%D0%B85.jpg"/>
+                  {/*https://audiobookbg.com/wp-content/uploads/2017/01/rsz_%D1%81%D0%BC%D0%B8%D1%80%D0%BD%D0%B5%D0%BD%D1%81%D0%BA%D0%B85.jpg*/}
+                  <img alt="Христо Смирненски" src="/images/hristo-smirnenski-home.jpg"/>
                 </div>
               </div>
             </div>
@@ -352,7 +353,8 @@ export default class HomeTopBar extends Component {
               </div>
               <div className="col-6 about-app__img">
                 <div className="about-app__img-wrap">
-                  <img alt="" src="https://www.viewsofia.com/upload/article_big/image_big_32618.jpg"/>
+                  {/*https://www.viewsofia.com/upload/article_big/image_big_32618.jpg*/}
+                  <img alt="" src="/images/dimitar-talev-home.jpg"/>
                 </div>
               </div>
             </div>

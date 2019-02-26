@@ -20,7 +20,7 @@ class TestsHomePageStore {
 
   onSortTests (search) {
     this.searchedTests = this.tests.filter((test) => {
-      return test.name.indexOf(search) === 0
+      return test.name.toLowerCase().indexOf(search.toLowerCase()) === 0
     })
   }
 }

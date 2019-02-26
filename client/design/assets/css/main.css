@@ -2164,7 +2164,8 @@ h6 {
 
 @media screen and (max-width: 768px) {
     .header-home .header-home__title {
-        width: 100%
+        width: 100%;
+        margin-bottom: 100px
     }
 
     .header-home .header-home__description {

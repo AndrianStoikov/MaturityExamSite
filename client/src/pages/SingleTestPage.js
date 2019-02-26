@@ -67,7 +67,7 @@ export default class SingleTestPage extends Component {
                     className="header-home__description header-home__description--big header-home__description--calculator">
                     Маркирайте отговорите, които смятате за верни и в края на
                     страницата натиснете бутона "Провери". Сайтът ще преброи
-                    вашите верни и грешни върпоси и ще ви покаже ако имате
+                    вашите верни и грешни отговори и ще ви покаже ако имате
                     грешка.
                     Ако даден въпрос е оставен празен се смята за грешка.
                   </p>

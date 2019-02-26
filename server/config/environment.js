@@ -7,8 +7,8 @@ const DB_PASSWORD = 'hercogit12'
 
 module.exports = {
 
-  // database: `mongodb://${DB_USER}:${DB_PASSWORD}@ds121295.mlab.com:21295/maturity-exam`
+  database: `mongodb://${DB_USER}:${DB_PASSWORD}@ds121295.mlab.com:21295/maturity-exam`
 
   // Local database
-  database: 'mongodb://localhost/za-maturata'
+  // database: 'mongodb://localhost/za-maturata'
 }

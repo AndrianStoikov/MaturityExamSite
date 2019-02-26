@@ -5,14 +5,14 @@ const encryption = require('../utilities/encryption')
 
 // TODO: Fix admin function to use proper name and password
 function seedAdmin () {
-  User.find({username: 'Admin'}).then(users => {
+  User.find({username: 'TestUser'}).then(users => {
     if (users.length === 0) {
-      let pwd = 'password'
+      let pwd = 'testPassword'
       let salt = encryption.generateSalt()
       let hashedPwd = encryption.generateHashedPassword(salt, pwd)
 
       let adminData = {
-        username: 'Admin',
+        username: 'TestUser',
         salt: salt,
         password: hashedPwd,
         roles: ['Admin'],

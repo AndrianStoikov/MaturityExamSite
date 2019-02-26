@@ -3,7 +3,7 @@ import React from 'react'
 export default class PortFolio extends React.Component {
   render () {
     const divStyle = {
-         backgroundImage: 'url("assets/images/agency/agency_bg.jpg")',
+         backgroundImage: 'url("https://hdqwalls.com/wallpapers/dark-minimalist-blur-4k-4o.jpg")',
     }
 
     return (

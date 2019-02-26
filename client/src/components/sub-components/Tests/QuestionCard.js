@@ -30,11 +30,13 @@ export default class QuestionCard extends Component {
     let regex = /\n/gm
 
     let questionStyle = {
-
+      fontSize: '18px',
+      color: '#404b66'
     }
 
     if(this.props.question.shouldBeChecked && (this.props.question.checkedAnswer === '')) {
       questionStyle = {
+        fontSize: '18px',
         'color' : 'red'
       }
     }
@@ -92,7 +94,10 @@ export default class QuestionCard extends Component {
       )
 
 
-      let textStyle = {}
+      let textStyle = {
+        fontSize: '18px',
+        color: '#2c3447'
+      }
 
       if (this.props.question.shouldBeChecked &&
         (possibleAnswer === rightAnswer)) {
@@ -111,12 +116,14 @@ export default class QuestionCard extends Component {
         )
 
         textStyle = {
+          fontSize: '18px',
           color: 'green'
         }
       }
 
       if (this.props.question.shouldBeChecked && (this.props.question.checkedAnswer === possibleAnswer) && (possibleAnswer !== rightAnswer)) {
         textStyle = {
+          fontSize: '18px',
           color: 'red'
         }
       }
@@ -124,16 +131,16 @@ export default class QuestionCard extends Component {
       answers.push(
         <label className="radio-btn calculator__radio-btn"
                style={{display: 'block'}} key={i}>
-          <input className="radio-btn__radio" type="radio"
+          <input className="radio-btn__radio"
+                 type="radio"
                  value={possibleAnswer}
                  name="question"
                  onChange={this.props.handleChange.bind(null,
                    this.props.question._id, possibleAnswer, i)}
+                 disabled={this.props.question.shouldBeChecked}
           />
           <span className="radio-btn__radio-custom">
-
              {circle}
-
           </span>
           <span className="radio-btn__label" style={textStyle}>
             {possibleAnswer}

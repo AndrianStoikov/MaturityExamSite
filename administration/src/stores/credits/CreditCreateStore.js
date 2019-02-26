@@ -36,6 +36,17 @@ class CreditCreateStore {
     this.textValidationState = ''
     this.descriptionValidationState = 'has-error'
   }
+
+  onCreateCreditSuccess () {
+    this.credit = {
+      text: '',
+      description: '',
+    }
+
+    this.message = ''
+    this.textValidationState = ''
+    this.descriptionValidationState = ''
+  }
 }
 
 export default alt.createStore(CreditCreateStore)

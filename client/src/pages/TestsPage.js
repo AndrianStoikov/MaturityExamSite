@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TestCard from '../components/sub-components/Tests/TestCard'
 import TestsHomePageStore from '../stores/Tests/TestsHomePageStore'
 import TestsHomePageActions from '../actions/Tests/TestsHomePageActions'
+import MediaQuery from 'react-responsive'
 
 export default class TestsPage extends Component {
   constructor (props) {
@@ -57,44 +58,45 @@ export default class TestsPage extends Component {
   }
 
   render () {
+    let searchBar = <div className="col-offset-1 col-3 col-m-4" style={{marginBottom: '50px'}}>
+      <div className="card form">
+        <p className="card__title">Търсене</p>
+        <form className="form_form">
+          <div
+            className="form__form-group form__form-group--without-label">
+            <input className="form__input js-field__search"
+                   type="text"
+                   placeholder="Потърсете тест по име .... "
+                   onChange={this.handleSearchChange}
+            />
+
+            <span className="form__input-icon"><i
+              className="mdi mdi-magnify"/></span>
+          </div>
+        </form>
+      </div>
+    </div>
+
     return (
       <div>
         <section className="section">
 
           <div className="container">
             <div className="row blog blog--section">
+
+              <MediaQuery maxWidth={767}>
+                {searchBar}
+              </MediaQuery>
+
               <div className="col-8 col-m-8">
                 <div className="blog__wrap">
                   {this.generateTestCards()}
                 </div>
-
-                {/*TODO: Implement the Older Posts*/}
-                {/*<div className="blog__btn-toolbar">*/}
-                {/*<a className="site-btn site-btn--light blog__btn-prev">Older*/}
-                {/*Posts</a>*/}
-
-                {/*</div>*/}
               </div>
 
-              {/*TODO: THIS MAY BE FOR REMOVAL*/}
-              <div className="col-offset-1 col-3 col-m-4">
-                <div className="card form">
-                  <p className="card__title">Търсене</p>
-                  <form className="form_form">
-                    <div
-                      className="form__form-group form__form-group--without-label">
-                      <input className="form__input js-field__search"
-                             type="text"
-                             placeholder="Потърсете тест по име .... "
-                             onChange={this.handleSearchChange}
-                      />
-
-                      <span className="form__input-icon"><i
-                        className="mdi mdi-magnify"/></span>
-                    </div>
-                  </form>
-                </div>
-              </div>
+              <MediaQuery minWidth={767}>
+                {searchBar}
+              </MediaQuery>
             </div>
             <hr/>
           </div>

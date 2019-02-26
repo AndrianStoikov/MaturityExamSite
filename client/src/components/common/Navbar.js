@@ -3,6 +3,10 @@ import { Link, withRouter } from 'react-router-dom'
 import React from 'react'
 
 class Navbar extends Component {
+  handleClick() {
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'})
+  }
+
   render () {
     let currentRoute = this.props.location.pathname
     let navigation
@@ -12,6 +16,7 @@ class Navbar extends Component {
         <ul>
           <li>
             <Link to={'/'}
+                  onClick={this.handleClick.bind(this)}
                   className="link link--gray">Начало
             </Link>
           </li>

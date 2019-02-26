@@ -9,13 +9,15 @@ import Form from '../../components/form/Form'
 import Submit from '../../components/form/Submit'
 import $ from 'jquery'
 
+
+// TODO: Add image url to credits
 class UserLogin extends Component {
   constructor (props) {
     super(props)
     this.state = LoginStore.getState()
     this.onChange = this.onChange.bind(this)
 
-    this.backgroundImageUrl = 'assets/images/section-4.jpg'
+    this.backgroundImageUrl = 'https://hdqwalls.com/wallpapers/dark-minimalist-blur-4k-4o.jpg'
   }
 
   onChange (state) {
@@ -68,7 +70,8 @@ class UserLogin extends Component {
                  style={{
                    backgroundImage: `url(${this.backgroundImageUrl})`,
                    height: $(window).height(),
-                   minHeight: "600px"
+                   minHeight: "430px",
+                   maxHeight: '430px'
                  }}>
           <div className="container">
             <div className="row">

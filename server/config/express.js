@@ -30,6 +30,7 @@ module.exports = {
     // TODO: Fix cors policy if the domain is changed
     // Local - 'http://localhost:3001', 'http://192.168.0.102:3001', "http://localhost:3002", "http://192.168.0.100:3002"
     // Webfaction - 'http://administration.hercogit.webfactional.com', 'http://hercogit.webfactional.com'
+    // Uchilishte - 'https://matura.pmgkk.com', 'https://admin.matura.pmgkk.com'
     app.use(cors({
       origin: ['http://localhost:3001', 'http://192.168.0.102:3001', "http://localhost:3002", "http://192.168.0.100:3002"]
     }))

@@ -3,11 +3,13 @@ import Auth from './Auth'
 // TODO: CHANGE SERVER_URL TO THE RIGHT ONE
 
 // Local server
-// const URL = 'http://localhost:3000'
+const URL = 'http://localhost:3000'
 
 // Webfaction
-const URL = 'http://server.hercogit.webfactional.com'
+// const URL = 'http://server.hercogit.webfactional.com'
 
+// Uchilishte
+// const URL = 'https://server.matura.pmgkk.com'
 
 class DataRequests {
   static post (url, data, authenticated) {

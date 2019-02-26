@@ -53,10 +53,26 @@ export default class Home extends Component {
     return (
       <div>
         <Header
-          infoText={'Сайта предоставя достъп до всички 8 автори от 12-ти клас,\n' +
-          'които са включени в ДЗИ, техните произведения\n' +
+          infoText={'Сайтът предоставя достъп до всички 8 автори от 12-ти клас,\n' +
+          'които са включени в държавния зрелостен изпит, техните произведения,\n' +
           'анализи към тях и тестове'}
-          image={''}/>
+          image={''}>
+          <div className="row header-home__btns header-home__btns-pricing">
+            <div className="col-7">
+              <a
+                href="#wrapper"
+                className="site-btn site-btn--accent site-btn--right header-home__btn"
+                style={{
+                  background: '#ff5c72',
+                  // marginLeft: '125px'
+                }}>
+                Към авторите <span style={{marginLeft: '10px'}}><i
+                className='arrow down'/></span>
+              </a>
+            </div>
+          </div>
+        </Header>
+
         <HomeTopBar/>
 
         <div id="endMenu"/>
