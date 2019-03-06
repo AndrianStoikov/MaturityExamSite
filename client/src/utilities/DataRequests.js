@@ -3,10 +3,10 @@ import Auth from './Auth'
 // TODO: CHANGE SERVER_URL TO THE RIGHT ONE
 
 // Local server
-const SERVER_URL = 'http://localhost:3000'
+// const SERVER_URL = 'http://localhost:3000'
 
 // Webfaction
-// const SERVER_URL = 'http://server.hercogit.webfactional.com'
+const SERVER_URL = 'http://server.hercogit.webfactional.com'
 
 // Uchilishte
 // const SERVER_URL = 'https://server.matura.pmgkk.com'

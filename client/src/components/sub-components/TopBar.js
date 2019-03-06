@@ -223,7 +223,7 @@ export default class TopBar extends Component {
                           <i className="mdi mdi-chevron-down"/>
                         </span>
                     </h4>
-                    <div className="faq__card-description">
+                    <div className="faq__card-description align-left">
                       {biographyElements}
                     </div>
                   </div>

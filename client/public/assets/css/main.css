@@ -1887,7 +1887,7 @@ body {
     font-family: Nunito, sans-serif;
     font-size: 16px;
     line-height: 32px;
-    color: #7d93b2;
+    color: #5d7190;
     background-color: #fafcff;
     font-weight: 200
 }
@@ -3177,6 +3177,18 @@ h6 {
 }
 
 @media screen and (max-width: 767px) {
+    .faq .faq__card.active .faq__card-description p {
+        font-family: "Arial", serif;
+        font-size: 16px;
+        font-weight: 300
+    }
+
+    .about-app .about-app__description-content p {
+        font-family: "Times New Roman", serif;
+        color: black;
+        text-align: left;
+    }
+
     .menu .menu__item {
         width: 50%
     }
@@ -3384,7 +3396,9 @@ h6 {
 }
 
 .about-app .about-app__description-content p {
-    margin: 0
+    font-size: 18px;
+    margin: 0;
+    color: #222744;
 }
 
 .about-app .about-app__btn {
@@ -5528,7 +5542,7 @@ h6 {
 }
 
 .radio-btn .radio-btn__radio-custom {
-    width: 16px;
+    min-width: 16px;
     height: 16px;
     border: 2px solid #ceddf2;
     border-radius: 50%;

@@ -30,13 +30,13 @@ export default class QuestionCard extends Component {
     let regex = /\n/gm
 
     let questionStyle = {
-      fontSize: '18px',
-      color: '#404b66'
+      fontSize: '22px',
+      color: '#323d56'
     }
 
     if(this.props.question.shouldBeChecked && (this.props.question.checkedAnswer === '')) {
       questionStyle = {
-        fontSize: '18px',
+        fontSize: '22px',
         'color' : 'red'
       }
     }
@@ -50,13 +50,13 @@ export default class QuestionCard extends Component {
 
     for (let i = 0; i < matches.length - 1; i++) {
       questionLines.push(
-        <h4 style={{margin: 0, color: questionStyle.color}} key={i}>{this.parseStringForSpecialStylization(
+        <h4 style={{margin: 0, color: questionStyle.color, fontSize: questionStyle.fontSize}} key={i}>{this.parseStringForSpecialStylization(
           matches[i])}</h4>,
       )
     }
 
     questionLines.push(
-      <h4 style={{margin: '0 0 10px 0', color: questionStyle.color}}
+      <h4 style={{margin: '0 0 10px 0', color: questionStyle.color, fontSize: questionStyle.fontSize}}
           key={matches.length - 1}>{this.parseStringForSpecialStylization(
         matches[matches.length - 1])}</h4>,
     )
@@ -96,7 +96,7 @@ export default class QuestionCard extends Component {
 
       let textStyle = {
         fontSize: '18px',
-        color: '#2c3447'
+        color: '#505463'
       }
 
       if (this.props.question.shouldBeChecked &&
@@ -139,12 +139,14 @@ export default class QuestionCard extends Component {
                    this.props.question._id, possibleAnswer, i)}
                  disabled={this.props.question.shouldBeChecked}
           />
+          <div style={{display: 'inline-flex'}}>
           <span className="radio-btn__radio-custom">
              {circle}
           </span>
           <span className="radio-btn__label" style={textStyle}>
             {possibleAnswer}
           </span>
+          </div>
         </label>,
       )
     }

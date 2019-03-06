@@ -56,7 +56,8 @@ export default class Home extends Component {
           infoText={'Сайтът предоставя достъп до всички 8 автори от 12-ти клас,\n' +
           'които са включени в държавния зрелостен изпит, техните произведения,\n' +
           'анализи към тях и тестове'}
-          image={''}>
+          image={''}
+          centerContent={'header-home--center-content'}>
           <div className="row header-home__btns header-home__btns-pricing">
             <div className="col-7">
               <a
